@@ -1,0 +1,43 @@
+/*Dark mode is god mode*/
+p{
+    color: #FFF;
+
+}
+body{
+    background-color: black;
+}
+#name{
+    color: #FF00FF;
+}
+ul{
+    color: pink;
+}
+ol{
+    color: purple;
+}
+/*From here on is the actual assignment
+/*Begin Part 3*/
+#part3idmethod{
+    color: blueviolet;
+}
+.part3classmethod{
+    color:yellowgreen
+}
+/*Begin part 4*/
+#part4{
+    font-variant-caps: all-small-caps;
+}
+/*Begin part 5*/
+#part5{
+    font-style: italic;
+    font-weight: 900;
+    color:#FF0000;
+    font-variant-caps:all-petite-caps
+}
+/*Just tried to have some fun here with Part 6*/
+#part6{
+    columns: 8;
+    font-variant-caps:all-petite-caps;
+    color:#FF00FF;
+    column-gap: 60px;
+}
