@@ -1,0 +1,7 @@
+Input 12
+Input2 1
+
+Alert 1: <121>   <!-- Input & Input2 data types: <String>
+Alert 2: <13>   <!-- number1 & number 2 data types: <Int>
+Alert 3: <13>   <!-- decimalNumber1 & decimalNumber2 data types: <Float>
+Alert 4: <13>  
