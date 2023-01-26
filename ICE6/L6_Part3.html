@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="DJ Standish" />
+		<title></title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="L6_part3.js"></script>
+	</head>
+	<body>
+		<h1>Lecture 6 Part 3</h1>
+
+		<form method="get" action="" name="compareNumbersForm">
+			<p>Please type in a number:</p>
+			<!-- Input the 1st number -->
+			Number 1: <input type="text" name="number1" /><br />
+			<p>Now type in a different number:</p>
+			<!-- Input a 2nd number -->
+			Number 2: <input type="text" name="number2" />
+			<p></p>
+			<!-- insert button with a display "Compare the Two Numbers!" -->
+			<button type="button" onclick="compareTwoNumbers()">
+				Compare the Two Numbers
+			</button>
+			<p id="finalCompare">The larger number of the two is: </p>
+		</form>
+	</body>
+</html>

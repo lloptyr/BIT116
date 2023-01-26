@@ -5,30 +5,28 @@
 		<meta name="author" content="DJ Standish" />
 		<title>HTML Template</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-		 <script>
-			let whileLoop=true;
+		<script>
+			let dataValidator = true;
 			let price, priceNum, totalprice, tax;
 			//we do some data validation here
-			while(whileLoop){
-				price = prompt("Please enter a number","");
-				if (isNaN(price)){
+			while (dataValidator) {
+				price = prompt("Please enter a number", "");
+				if (isNaN(price)) {
 					alert("Please make sure you enter a number");
-				}
-				else{
-				priceNum = parseFloat(price);
-				priceNum = priceNum.toFixed(2);
-				whileLoop=false;
+				} else {
+					priceNum = parseFloat(price);
+					priceNum = priceNum.toFixed(2);
+					dataValidator = false;
 				}
 			}
 			//pricenum has to be redefined here as a number for some reason I dont understand
-			priceNum=parseFloat(priceNum);
-			tax=priceNum*.09;
-			tax=tax.toFixed(2);
-			totalprice=priceNum+parseFloat(tax);
-			totalprice=totalprice.toFixed(2);
+			priceNum = parseFloat(priceNum);
+			tax = priceNum * 0.09;
+			tax = tax.toFixed(2);
+			totalprice = priceNum + parseFloat(tax);
+			totalprice = totalprice.toFixed(2);
 			alert("Your tax is " + tax + ", bringing your total to " + totalprice);
-
-			</script>
+		</script>
 	</head>
 
 	<body>
@@ -59,7 +57,6 @@
 				distributions of GNU/Linux!"
 			</p>
 			<!-- paragraph -->
-
 
 			<h2>
 				<p>Best Linux Distros</p>
