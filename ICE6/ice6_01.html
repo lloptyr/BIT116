@@ -19,7 +19,7 @@
 					dataValidator = false;
 				}
 			}
-			//pricenum has to be redefined here as a number for some reason I dont understand
+			//pricenum has to be redefined here as a number because toFixed returns a string
 			priceNum = parseFloat(priceNum);
 			tax = priceNum * 0.09;
 			tax = tax.toFixed(2);
