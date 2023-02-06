@@ -5,6 +5,22 @@
 		<meta name="author" content="DJ Standish" />
 		<title>HTML Template</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> 
+		<script>
+			function myFunction(){
+				let message="";
+				let age=parseInt(prompt("Please enter your age"));
+				if(age==18){
+					message="You are exactly 18 years old";
+				}
+				else if(age>18){
+					message="You are greater than 18 years old";
+				}
+				else{
+					message="You are less than 18 years old";
+				}
+				document.getElementById('displayBox').innerHTML=message;
+			}
+		</script>
 	</head>
 
 	<body>
@@ -12,6 +28,12 @@
 			<h1>Standish</h1>
 			<!-- heading -->
 		</header>
+		<button type="button" onclick="myFunction()">
+			Click me!
+		</button>
+		<h3 id="displayBox">
+
+		</h3>
 		<section>
 			<p>
 				"I'd just like to interject for a moment. What you're refering to as

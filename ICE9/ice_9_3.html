@@ -5,14 +5,39 @@
 		<meta name="author" content="DJ Standish" />
 		<title>HTML Template</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> 
+		<script>
+			function printArrays() {
+				let anArray=new Array();
+				let anotherArray=new Array();
+
+				for(i=0;i<=4;i++){
+					anArray[i]=i;
+					anotherArray[i]=i+7;
+				}
+				document.getElementById("arraysGoHere").append("First Array: "+anArray);
+				document.getElementById("arraysGoHere").append(" Second Array: "+anotherArray);
+				let concatArray=anArray.concat(anotherArray);
+				let joinedArray=anArray.join();
+				let slicedArray=anotherArray.slice(2,4);
+				document.getElementById("arraysGoHere").append(" Concatenated Array: "+concatArray);
+				document.getElementById("arraysGoHere").append(" Joined Array: "+joinedArray);
+				document.getElementById("arraysGoHere").append(" Sliced Array: "+slicedArray);
+			}
+			
+		</script>
 	</head>
 
-	<body>
+	<body">
 		<header>
 			<h1>Standish</h1>
 			<!-- heading -->
 		</header>
 		<section>
+			<h3 id="arraysGoHere">
+				<button type="button" onclick="printArrays()">
+					I am a teapot
+				</button>
+			</h3>
 			<p>
 				"I'd just like to interject for a moment. What you're refering to as
 				Linux, is in fact, GNU/Linux, or as I've recently taken to calling it,

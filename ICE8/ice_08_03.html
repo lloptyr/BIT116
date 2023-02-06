@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Dj Standish">
+<title>Example 01: Grade Checker</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+// We're going to use a mix of jQuery and JavaScript for this bad boy :-)
+$(document).ready( function() {
+	$("#determineGrade").click( function() {
+	    var grade = $("#grade").val(); // This gets the value entered in the 'age' input element
+	    let letterGrade;
+	    if (grade == "" || isNaN( Number(grade) )) // This checks to see if text field is empty or doesn't contain a legitimate number
+		{                                      // If either, then an alert box is called to inform the user of his-or-her error
+	        alert("Hey, that is not a number!\n\nPlease try entering your grade again.\n\nThanks!");
+			$("#grade").val(""); // This sets the value back to empty
+	        return; // This return allows the user to try  again, and also stops defaulting to the final else which would show wrong message
+	    }
+		else if(Number(grade) >100 || Number(grade) <0 ) // This checks to see if text field is empty or doesn't contain a legitimate number
+		{                                      // If either, then an alert box is called to inform the user of his-or-her error
+	        alert("Hey, that is not a possible grade!\n\nPlease try entering your grade again.\n\nThanks!");
+			$("#grade").val(""); // This sets the value back to empty
+	        return; // This return allows the user to try  again, and also stops defaulting to the final else which would show wrong message
+	    }
+		else{
+			grade = Number(grade); // The Number() function converts the object argument to a number that represents the object's value.
+	    	if (grade >= 90)  
+			{
+       			letterGrade="an A";
+			}
+			else if(grade>=80 && grade<90){
+				letterGrade="a B"
+			}
+			else if(grade>=70 && grade <80){
+				letterGrade="a C"
+			}
+			else if(grade>=60 && grade<70){
+				letterGrade="a D"
+			}
+			else{
+				letterGrade="an F"
+			}
+	   document.getElementById('output').innerHTML="Your grade of "+grade+" gives you "+letterGrade;
+	}}); 
+});
+</script>
+</head>
+
+<body>
+<h2>Example 01: Grade Letter Checker</h2>
+
+<form action="">
+
+Please enter your current grade: <input type="text" id="grade">
+
+<br><br>
+
+<input type="button" value="Now click this groovy button!" id="determineGrade">
+
+<br><br>
+
+<h3 id="output"></h3>
+
+</form>
+
+</body>
+</html>
+
