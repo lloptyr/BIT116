@@ -7,25 +7,12 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> 
 		<script>
 			function printArrays() {
-				let anArray=new Array();
-				let anotherArray=new Array();
-				for(i=0;i<=4;i++){
-					anArray[i]=i;
-					anotherArray[i]=i+5;
-				}
-				document.getElementById("arraysGoHere").append("First Array: "+anArray);
-				document.getElementById("arraysGoHere").append(" Second Array: "+anotherArray);
-
-				let reversedArray=anotherArray.reverse();
-				let reverseByPop=new Array();
-				// arrayLengthStorage prevents anArray.length from shortening the length of reverseByPop, as it changes while the loop happens
-				let arrayLengthStorage=anArray.length;
-				for(i=0;i<arrayLengthStorage;i++){
-					reverseByPop[i]=anArray.pop();
-				}
-				document.getElementById("arraysGoHere").append(" Reversed Array: "+reversedArray);
-				document.getElementById("arraysGoHere").append(" Reversed By Pop Array: "+reverseByPop);
+				let anArray=new Array(" EndeavourOS"," Arch"," Mint"," Manjaro"," Ubuntu"," NixOS"," LFS"," Gentoo"," Debian"," RHEL"," Fedora");
+				document.getElementById("arraysGoHere").append("Unsorted Array:"+anArray);
+				let sortedArray=anArray.sort();
+				document.getElementById("arraysGoHere").append(". Sorted Array: "+sortedArray);
 			}
+				
 			
 		</script>
 	</head>
