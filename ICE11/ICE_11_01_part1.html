@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="DJ Standish" />
+		<title>Temperature Radio Buttons</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<script src="ICE_11_01.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<h1>Standish</h1>
+			<!-- heading -->
+		</header>
+		<section>
+			<p>
+				<input type="text" id="temp"></br>
+				<input type="radio" value="farenheit" name="tempSystem">Farenheit</br>
+				<input type="radio" value="celsius" name="tempSystem">Celsius</br>
+				<button type="button" id="convert" onclick="tempConversion()">Click Here to Convert</button>
+			</p>
+			<p id="tempOut">
+
+			</p>
+		</section>
+	</body>
+	<footer>
+		<p>
+			&copy; 2023 <a href="mailto:dustin.standish@yahoo.com">Mail</a> &nbsp;
+			<a href="https://github.com/lloptyr/BIT116">Github</a>
+		</p>
+	</footer>
+</html>

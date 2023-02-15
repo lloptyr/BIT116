@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="DJ Standish" />
+		<title>One Way conversions</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<script src="ICE_11_01.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<h1>Standish</h1>
+			<!-- heading -->
+		</header>
+		<section>
+			<p>
+				<!--Currency Conversions accurate as of 2023-02-15 12:28-->
+				<input type="radio" value="usd" name="currencyExchange1">USD</br>
+				<input type="radio" value="ruble" name="currencyExchange1">Ruble</br>
+				<input type="radio" value="euro" name="currencyExchange1">Euro</br>
+				<input type="radio" value="yen" name="currencyExchange1">Yen</br>
+				<input type="radio" value="mark" name="currencyExchange1">Mark</br>
+				<input type="text" id="currencyIn"></br>
+				<input type="radio" value="usd" name="currencyExchange2">USD</br>
+				<input type="radio" value="ruble" name="currencyExchange2">Ruble</br>
+				<input type="radio" value="euro" name="currencyExchange2">Euro</br>
+				<input type="radio" value="yen" name="currencyExchange2">Yen</br>
+				<input type="radio" value="mark" name="currencyExchange2">Mark</br>
+				<button type="button" id="convert" onclick="internationalCurrencyConverter()">Click Here to Convert</button>
+			</p>
+			<p id="internationalExchangeOut">
+
+			</p>
+		</section>
+	</body>
+	<footer>
+		<p>
+			&copy; 2023 <a href="mailto:dustin.standish@yahoo.com">Mail</a> &nbsp;
+			<a href="https://github.com/lloptyr/BIT116">Github</a>
+		</p>
+	</footer>
+</html>
