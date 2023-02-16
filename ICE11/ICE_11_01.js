@@ -1,3 +1,4 @@
+//This is part 1
 function tempConversion() {
 	let convertedTemp;
 	let originalTemp = parseFloat(document.getElementById("temp").value);
@@ -18,6 +19,7 @@ function tempConversion() {
 		}
 	}
 }
+//This is part 2
 function veggieFacts() {
 	let veggieSelected = $("input:radio[name=veggieChoice]:checked").val();
 	let newVeggieFact;
@@ -44,6 +46,7 @@ function veggieFacts() {
 	}
 	document.getElementById("veggieFaxOut").innerHTML = newVeggieFact;
 }
+//This is Part 3
 function dollarConversion() {
 	let dollarAmount = document.getElementById("dollar").value;
 	let convertTo = $("input:radio[name=dollarExchange]:checked").val();
@@ -75,6 +78,7 @@ function dollarConversion() {
 			"(s)";
 	}
 }
+//This is Part 4
 function internationalCurrencyConverter() {
 	let givenCurrency = document.getElementById("currencyIn").value;
 	let startingCurrency = $("input:radio[name=currencyExchange1]:checked").val();
