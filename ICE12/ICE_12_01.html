@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="DJ Standish" />
+		<title>ICE 12 Part 1</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<script>
+			function matchAllElements(userInput){
+				let locationString=userInput +" is found in the following locations: ";
+				let checkerString=locationString;
+				for(i in numArray){
+					if(numArray[i]==userInput){
+						locationString+=(i+" ")
+					}
+				}
+				if(locationString==checkerString) locationString="Number not found";
+				document.getElementById("firstOutput").innerHTML=locationString;
+			}
+			function doesNotMatch(userInput){
+				let locationString=userInput+" is not found in the following locations: "
+				let checkerString=locationString
+				for(i in numArray){
+					if(numArray[i]!=userInput){
+						locationString+=(i+" ");
+					}
+				}
+				if(locationString==checkerString) locationString=userInput+" is found in every location";
+				document.getElementById("firstOutput").innerHTML=locationString;
+			}
+			function isLessThan(userInput){
+				let locationString=userInput+" is greater than the numbers found in the following locations: "
+				let checkerString=locationString
+				for(i in numArray){
+					if(numArray[i]<userInput){
+						locationString+=(i+" ");
+					}
+				}
+				if(locationString==checkerString) locationString=userInput+" is less than every number in the array";
+				document.getElementById("firstOutput").innerHTML=locationString;
+			}
+			function isWithinRange(userInputHigh, userInputLow){
+				let locationString="The following numbers are within the array and within the given range: "
+				let checkerString=locationString
+				for(i in numArray){
+					if(numArray[i]>=userInputLow&&numArray[i]<=userInputHigh){
+						locationString+=(numArray[i]+" ");
+					}
+				}
+				if(locationString==checkerString) locationString="No Numbers are within this array, and within this range";
+				document.getElementById("secondOutput").innerHTML=locationString;
+			}
+		</script>
+	</head>
+
+	<body>
+		<header>
+			<h1>Standish</h1>
+			<!-- heading -->
+		</header>
+		<section>
+<!--1.  Print all items that match the user's input exactly when the user 
+clicks on the button.  If the user types in 3, you should print out all 
+the array elements that are 3, exactly. 
+2.  Print all items that do NOT match the user's input when the user 
+clicks on the button.  If the user types in 3, you should print out all 
+the array elements that are NOT 3 
+3.  Print all items that are less than what the user entered. 
+4.  Printing everything within a given range: 
+Add a second textbox, and make sure to clearly tell the user that one 
+of the textboxes is for the 'low' end of the range, and the other is for 
+the 'high'  (or 'top')  end of the range. 
+Print all items that are between the two numbers that the user typed 
+in. -->
+
+			<p id="arrayOutput">
+				<script>
+					let numArray=[];
+					/* This is prod code
+					for(i=0;i<5;i++) {
+						numArray[i]=Math.floor(Math.random()*100)
+					}
+					*/
+					/*This is tester code*/
+					for(i=0;i<5;i++){
+						numArray[i]=i*5;
+					}
+					document.getElementById('arrayOutput').innerHTML="The starting array is "+numArray.toString();
+				</script>
+			</p>
+			<p>
+				<input type="text" id="firstInput"><br/>
+				<input type="button" value="Match my number" id="matchButton" onclick="matchAllElements(document.getElementById('firstInput').value)">
+				<input type="button" value="Don't match my number" id="noMatchButton" onclick="doesNotMatch(document.getElementById('firstInput').value)">
+				<input type="button" value="Less than my number" id="lessThanButton" onclick="isLessThan(document.getElementById('firstInput').value)"><br/>
+			</p>
+			<p id="firstOutput">
+
+			</p>
+			<p>
+				<input type="text" id="secondInput">High End of Range<br/> 
+				<input type="text" id="thirdInput">Low End of Range<br/>
+				<input type="button" id="withinRangeButton" value="Is within this range" onclick="isWithinRange(document.getElementById('secondInput').value, document.getElementById('thirdInput').value)">
+
+			</p>
+			<p id="secondOutput">
+
+			</p>
+		</section>
+	</body>
+	<footer>
+		<p>
+			&copy; 2023 <a href="mailto:dustin.standish@yahoo.com">Mail</a> &nbsp;
+			<a href="https://github.com/lloptyr/BIT116">Github</a>
+		</p>
+	</footer>
+</html>
