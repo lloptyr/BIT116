@@ -5,6 +5,27 @@
 		<meta name="author" content="DJ Standish" />
 		<title>HTML Template</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<script>
+			function findAverage() {
+				let numAdder = 0;
+				for (i in numArray) {
+					numAdder += numArray[i];
+				}
+				let averageNum = eval(numAdder / numArray.length);
+				document.getElementById("outputField").innerHTML =
+					"Your average number is " + averageNum;
+			}
+			function findLargest() {
+				let largeBoy = Number.MIN_VALUE;
+				for (i in numArray) {
+					if (numArray[i] > largeBoy) {
+						largeBoy = numArray[i];
+					}
+				}
+				document.getElementById("outputField").innerHTML =
+					"The largest number is: " + largeBoy;
+			}
+		</script>
 	</head>
 
 	<body>
@@ -13,7 +34,31 @@
 			<!-- heading -->
 		</header>
 		<section>
-			<p>Middle</p>
+			<p id="arrayOutput">
+				<script>
+					let numArray = [];
+					/* This is prod code
+					for(i=0;i<5;i++) {
+						numArray[i]=Math.floor(Math.random()*100)
+					}
+					*/
+					/*This is tester code*/
+					for (i = 0; i < 5; i++) {
+						numArray[i] = i * 5;
+					}
+					document.getElementById("arrayOutput").innerHTML =
+						"The starting array is " + numArray.toString();
+				</script>
+			</p>
+			<p>
+				<input
+					type="button"
+					onclick="findAverage()"
+					value="Calculate Average"
+				/>
+				<input type="button" onclick="findLargest()" value="Find Largest" />
+			</p>
+			<p id="outputField"></p>
 		</section>
 	</body>
 	<footer>

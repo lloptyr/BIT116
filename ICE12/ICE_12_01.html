@@ -6,49 +6,60 @@
 		<title>ICE 12 Part 1</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 		<script>
-			function matchAllElements(userInput){
-				let locationString=userInput +" is found in the following locations: ";
-				let checkerString=locationString;
-				for(i in numArray){
-					if(numArray[i]==userInput){
-						locationString+=(i+" ")
+			function matchAllElements(userInput) {
+				let locationString =
+					userInput + " is found in the following locations: ";
+				let checkerString = locationString;
+				for (i in numArray) {
+					if (numArray[i] == userInput) {
+						locationString += i + " ";
 					}
 				}
-				if(locationString==checkerString) locationString="Number not found";
-				document.getElementById("firstOutput").innerHTML=locationString;
+				if (locationString == checkerString)
+					locationString = "Number not found";
+				document.getElementById("firstOutput").innerHTML = locationString;
 			}
-			function doesNotMatch(userInput){
-				let locationString=userInput+" is not found in the following locations: "
-				let checkerString=locationString
-				for(i in numArray){
-					if(numArray[i]!=userInput){
-						locationString+=(i+" ");
+			function doesNotMatch(userInput) {
+				let locationString =
+					userInput + " is not found in the following locations: ";
+				let checkerString = locationString;
+				for (i in numArray) {
+					if (numArray[i] != userInput) {
+						locationString += i + " ";
 					}
 				}
-				if(locationString==checkerString) locationString=userInput+" is found in every location";
-				document.getElementById("firstOutput").innerHTML=locationString;
+				if (locationString == checkerString)
+					locationString = userInput + " is found in every location";
+				document.getElementById("firstOutput").innerHTML = locationString;
 			}
-			function isLessThan(userInput){
-				let locationString=userInput+" is greater than the numbers found in the following locations: "
-				let checkerString=locationString
-				for(i in numArray){
-					if(numArray[i]<userInput){
-						locationString+=(i+" ");
+			function isLessThan(userInput) {
+				let locationString =
+					userInput +
+					" is greater than the numbers found in the following locations: ";
+				let checkerString = locationString;
+				for (i in numArray) {
+					if (numArray[i] < userInput) {
+						locationString += i + " ";
 					}
 				}
-				if(locationString==checkerString) locationString=userInput+" is less than every number in the array";
-				document.getElementById("firstOutput").innerHTML=locationString;
+				if (locationString == checkerString)
+					locationString =
+						userInput + " is less than every number in the array";
+				document.getElementById("firstOutput").innerHTML = locationString;
 			}
-			function isWithinRange(userInputHigh, userInputLow){
-				let locationString="The following numbers are within the array and within the given range: "
-				let checkerString=locationString
-				for(i in numArray){
-					if(numArray[i]>=userInputLow&&numArray[i]<=userInputHigh){
-						locationString+=(numArray[i]+" ");
+			function isWithinRange(userInputHigh, userInputLow) {
+				let locationString =
+					"The following numbers are within the array and within the given range: ";
+				let checkerString = locationString;
+				for (i in numArray) {
+					if (numArray[i] >= userInputLow && numArray[i] <= userInputHigh) {
+						locationString += numArray[i] + " ";
 					}
 				}
-				if(locationString==checkerString) locationString="No Numbers are within this array, and within this range";
-				document.getElementById("secondOutput").innerHTML=locationString;
+				if (locationString == checkerString)
+					locationString =
+						"No Numbers are within this array, and within this range";
+				document.getElementById("secondOutput").innerHTML = locationString;
 			}
 		</script>
 	</head>
@@ -59,7 +70,7 @@
 			<!-- heading -->
 		</header>
 		<section>
-<!--1.  Print all items that match the user's input exactly when the user 
+			<!--1.  Print all items that match the user's input exactly when the user 
 clicks on the button.  If the user types in 3, you should print out all 
 the array elements that are 3, exactly. 
 2.  Print all items that do NOT match the user's input when the user 
@@ -75,37 +86,53 @@ in. -->
 
 			<p id="arrayOutput">
 				<script>
-					let numArray=[];
-					/* This is prod code
-					for(i=0;i<5;i++) {
-						numArray[i]=Math.floor(Math.random()*100)
+					let numArray = [];
+					//This is prod code
+					for (i = 0; i < 5; i++) {
+						numArray[i] = Math.floor(Math.random() * 100);
 					}
-					*/
-					/*This is tester code*/
+
+					/*This is tester code
 					for(i=0;i<5;i++){
 						numArray[i]=i*5;
-					}
-					document.getElementById('arrayOutput').innerHTML="The starting array is "+numArray.toString();
+					}*/
+					document.getElementById("arrayOutput").innerHTML =
+						"The starting array is " + numArray.toString();
 				</script>
 			</p>
 			<p>
-				<input type="text" id="firstInput"><br/>
-				<input type="button" value="Match my number" id="matchButton" onclick="matchAllElements(document.getElementById('firstInput').value)">
-				<input type="button" value="Don't match my number" id="noMatchButton" onclick="doesNotMatch(document.getElementById('firstInput').value)">
-				<input type="button" value="Less than my number" id="lessThanButton" onclick="isLessThan(document.getElementById('firstInput').value)"><br/>
+				<input type="text" id="firstInput" /><br />
+				<input
+					type="button"
+					value="Match my number"
+					id="matchButton"
+					onclick="matchAllElements(document.getElementById('firstInput').value)"
+				/>
+				<input
+					type="button"
+					value="Don't match my number"
+					id="noMatchButton"
+					onclick="doesNotMatch(document.getElementById('firstInput').value)"
+				/>
+				<input
+					type="button"
+					value="Less than my number"
+					id="lessThanButton"
+					onclick="isLessThan(document.getElementById('firstInput').value)"
+				/><br />
 			</p>
-			<p id="firstOutput">
-
-			</p>
+			<p id="firstOutput"></p>
 			<p>
-				<input type="text" id="secondInput">High End of Range<br/> 
-				<input type="text" id="thirdInput">Low End of Range<br/>
-				<input type="button" id="withinRangeButton" value="Is within this range" onclick="isWithinRange(document.getElementById('secondInput').value, document.getElementById('thirdInput').value)">
-
+				<input type="text" id="secondInput" />High End of Range<br />
+				<input type="text" id="thirdInput" />Low End of Range<br />
+				<input
+					type="button"
+					id="withinRangeButton"
+					value="Is within this range"
+					onclick="isWithinRange(document.getElementById('secondInput').value, document.getElementById('thirdInput').value)"
+				/>
 			</p>
-			<p id="secondOutput">
-
-			</p>
+			<p id="secondOutput"></p>
 		</section>
 	</body>
 	<footer>
