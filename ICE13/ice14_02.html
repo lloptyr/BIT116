@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="DJ Standish" />
+		<title>ICE 14 Part 2</title>
+		<script>
+			function sleepyDuck() {
+				duck.src = "duck2.jpg";
+				document.getElementById("outputText").innerHTML +=
+					" I am so very tired...";
+			}
+			function awakeDuck() {
+				duck.src = "duck3.jpg";
+				document.getElementById("outputText").innerHTML +=
+					" Now I am wide awake.";
+			}
+		</script>
+	</head>
+
+	<body>
+		<h2>ICE 14: Drake the Duck</h2>
+
+		<img
+			src="duck1.jpg"
+			alt="Drake the Duck"
+			id="duck"
+			onmouseover="{
+				sleepyDuck();
+            }"
+			onmouseout="{
+				awakeDuck();
+            }"
+		/>
+
+		<h2 id="outputText">I am Drake the Duck.</h2>
+	</body>
+</html>
